@@ -44,37 +44,38 @@
     </script>
 </head>
 
-<body class="min-h-screen flex items-center justify-center bg-gradient-to-b from-indigo-500 to-purple-600 p-4">
+<body class="min-h-screen flex items-center justify-center bg-gray-100 p-4">
 
     <div class="w-full max-w-lg bg-white shadow-2xl rounded-2xl p-8 md:p-10">
 
         <h1 class="text-3xl font-bold text-gray-800 text-center mb-8">
-            👨‍🎓 Inscription Étudiant
+            Duoling
         </h1>
+        <p class="text-center text-gray-500 mt-3 text-sm">App de génaration automatique de binômes </p>
 
         <div id="alertBox" class="hidden mb-5 text-white bg-blue-600 p-4 rounded text-center text-lg"></div>
 
         <form id="form" onsubmit="registerStudent(event)" class="space-y-6">
 
             <div>
-                <label class="block font-semibold text-gray-700 mb-2 text-lg">Prénom</label>
-                <input 
-                    id="first_name" 
-                    type="text" 
-                    required
-                    class="w-full p-4 text-lg border rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none"
-                    placeholder="Ex: Gilles"
-                >
-            </div>
-
-            <div>
-                <label class="block font-semibold text-gray-700 mb-2 text-lg">Nom</label>
+                <label class="block font-semibold text-sm text-gray-600 mb-2 text-lg">Nom</label>
                 <input 
                     id="last_name" 
                     type="text" 
                     required
-                    class="w-full p-4 text-lg border rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none"
-                    placeholder="Ex: Brant"
+                    class="w-full p-2 text-lg text-gray-600 border rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                    placeholder="Ex: BITEMO"
+                >
+            </div>
+
+            <div>
+                <label class="block font-semibold text-sm text-gray-600 mb-2 text-lg">Prénom (s)</label>
+                <input 
+                    id="first_name" 
+                    type="text" 
+                    required
+                    class="w-full p-2 text-lg text-gray-600 border rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                    placeholder="Ex: Gilles"
                 >
             </div>
 
@@ -83,12 +84,12 @@
                 type="submit"
                 class="w-full bg-indigo-600 text-white py-4 rounded-xl text-lg font-bold hover:bg-indigo-700 transition"
             >
-                S'inscrire
+                Enregistrer
             </button>
         </form>
 
         <p class="text-center text-gray-600 mt-8 text-sm md:text-base">
-            Vos informations sont envoyées en toute sécurité 🚀
+            Les informations sont envoyées directement à une plateforme sécurisée pour génération de façon aleatoire des binomes.
         </p>
 
     </div>
