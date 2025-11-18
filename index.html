@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Inscription Étudiant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
@@ -20,9 +21,7 @@
 
             const response = await fetch("/api/students", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ first_name, last_name }),
             });
 
@@ -34,12 +33,10 @@
             btn.disabled = false;
             btn.innerText = "S'inscrire";
 
-            // Nettoyer le formulaire si succès
             if (data.success) {
                 document.getElementById("form").reset();
             }
 
-            // Disparition du message
             setTimeout(() => {
                 alertBox.classList.add("hidden");
             }, 3000);
@@ -47,57 +44,53 @@
     </script>
 </head>
 
-<body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-white-600 to-purple-600 p-4">
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-b from-indigo-500 to-purple-600 p-4">
 
-    <div class="w-full max-w-md bg-white shadow-xl rounded-2xl p-8">
+    <div class="w-full max-w-lg bg-white shadow-2xl rounded-2xl p-8 md:p-10">
 
-        <h1 class="text-2xl font-bold text-gray-800 text-center mb-6">
-             Duoling 
+        <h1 class="text-3xl font-bold text-gray-800 text-center mb-8">
+            👨‍🎓 Inscription Étudiant
         </h1>
-        <p class="text-center text-gray-500  text-sm">App de génaration automatique de binômes </p>
 
-        <!-- Alert -->
-        <div id="alertBox" class="hidden mb-5 text-white bg-blue-600 p-3 rounded text-center"></div>
+        <div id="alertBox" class="hidden mb-5 text-white bg-blue-600 p-4 rounded text-center text-lg"></div>
 
-        <!-- Form -->
-        <form id="form" onsubmit="registerStudent(event)" class="space-y-5">
+        <form id="form" onsubmit="registerStudent(event)" class="space-y-6">
 
             <div>
-                <label class="block font-semibold text-gray-700 mb-1">Nom</label>
+                <label class="block font-semibold text-gray-700 mb-2 text-lg">Prénom</label>
                 <input 
-                    id="last_name" 
+                    id="first_name" 
                     type="text" 
                     required
-                    class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                    class="w-full p-4 text-lg border rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none"
                     placeholder="Ex: Gilles"
                 >
             </div>
 
             <div>
-                <label class="block font-semibold text-gray-700 mb-1">Prénom</label>
+                <label class="block font-semibold text-gray-700 mb-2 text-lg">Nom</label>
                 <input 
-                    id="first_name" 
+                    id="last_name" 
                     type="text" 
                     required
-                    class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none"
-                    placeholder="Ex: BITEMO"
+                    class="w-full p-4 text-lg border rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                    placeholder="Ex: Brant"
                 >
             </div>
 
             <button 
                 id="submitBtn"
                 type="submit"
-                class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition"
+                class="w-full bg-indigo-600 text-white py-4 rounded-xl text-lg font-bold hover:bg-indigo-700 transition"
             >
-                Enregistrer
+                S'inscrire
             </button>
         </form>
 
-        <p class="text-center text-gray-500 mt-6 text-sm">
-            Les informations sont envoyées directement à notre plateforme sécurisée pour generation aleatoire des binomes.
-
+        <p class="text-center text-gray-600 mt-8 text-sm md:text-base">
+            Vos informations sont envoyées en toute sécurité 🚀
         </p>
-        <p class="text-center text-gray-500 mt-6 text-sm">ESGAE | LP-GL 2025-2026</p>
+
     </div>
 
 </body>
